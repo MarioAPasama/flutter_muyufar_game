@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": "pd001",
+            "cover": "",
+            "name": "Tuyul Man",
+            "genre": "Horror, Action",
+            "description": "Ini adalah game horror buatan yusup mansur",
+            "link_game": ""
+        },
+        {
+            "id": "pd002",
+            "cover": "",
+            "name": "Indopustaka Kids",
+            "genre": "Kids",
+            "description": "Ini adalah game dari Andi global soft yang di peruntuhkan untuk anak anak",
+            "link_game": ""
+        },
+        {
+            "id": "pd003",
+            "cover": "",
+            "name": "Indopustaka Kids",
+            "genre": "Kids",
+            "description": "Ini adalah game dari Andi global soft yang di peruntuhkan untuk anak anak",
+            "link_game": ""
+        }
+    ]
+}

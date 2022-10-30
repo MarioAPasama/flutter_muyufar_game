@@ -7,7 +7,7 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     SplashController().initialPage(context);
     return const Scaffold(
-      body: Center(child: Text('Splash')),
+      body: Center(child: Text('')),
     );
   }
 }
