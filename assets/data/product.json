@@ -2,11 +2,11 @@
     "data": [
         {
             "id": "pd001",
-            "cover": "",
-            "name": "Tuyul Man",
-            "genre": "Horror, Action",
+            "cover": "http://ebook.windypermadi.com/Unity/projectsw/Logo/logokelompoksatu.png",
+            "name": "Islam Education",
+            "genre": "Education, Action",
             "description": "Ini adalah game horror buatan yusup mansur",
-            "link_game": ""
+            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompokdua"
         },
         {
             "id": "pd002",
