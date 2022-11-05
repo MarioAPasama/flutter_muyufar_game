@@ -173,12 +173,22 @@ class HomePage extends StatelessWidget {
                 itemCount: product.length > 10 ? 10 : product.length,
                 itemBuilder: (context, index) {
                   return ListTile(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                GameWebViewPage(product[index].linkGame)),
+                      );
+                    },
                     leading: Container(
                       height: 50,
                       width: 50,
                       decoration: BoxDecoration(
                           color: colorPrimary,
-                          borderRadius: BorderRadius.circular(8)),
+                          borderRadius: BorderRadius.circular(8),
+                          image: DecorationImage(
+                              image: NetworkImage(product[index].cover))),
                     ),
                     title: Text(
                       product[index].name,

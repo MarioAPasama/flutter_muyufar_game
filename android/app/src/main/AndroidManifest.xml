@@ -1,8 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.muyufar_game">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
    <application
         android:label="muyufar_game"
         android:name="${applicationName}"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        android:grantUriPermissions="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -18,6 +24,7 @@
                  to determine the Window background behind the Flutter UI. -->
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
+              android:value="2"
               android:resource="@style/NormalTheme"
               />
             <intent-filter>
