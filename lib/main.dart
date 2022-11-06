@@ -7,7 +7,6 @@ import 'package:muyufar_game/infrastructure/theme/theme.dart';
 import 'presentation/pages/pages.dart';
 
 void main() async {
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   WidgetsFlutterBinding.ensureInitialized();
   if (Platform.isAndroid) {
     await AndroidInAppWebViewController.setWebContentsDebuggingEnabled(true);
@@ -24,7 +23,6 @@ void main() async {
       await serviceWorkerController
           .setServiceWorkerClient(AndroidServiceWorkerClient(
         shouldInterceptRequest: (request) async {
-          print(request);
           return null;
         },
       ));
@@ -39,6 +37,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: themeData(),

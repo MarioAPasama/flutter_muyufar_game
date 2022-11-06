@@ -3,9 +3,9 @@ import 'package:muyufar_game/domain/models/product_model.dart';
 import 'package:muyufar_game/infrastructure/theme/colors.theme.dart';
 import 'package:muyufar_game/presentation/pages/pages.dart';
 
-class CardBannerProducy extends StatelessWidget {
+class CardBannerProductUtil extends StatelessWidget {
   final ProductModel product;
-  const CardBannerProducy({required this.product, super.key});
+  const CardBannerProductUtil({required this.product, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +51,8 @@ class CardBannerProducy extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               color: colorPrimary,
                               fontSize: 16),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
                         const Spacer(),
                         Text(
@@ -66,7 +68,9 @@ class CardBannerProducy extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: colorTextBlack,
-                              fontSize: 12),
+                              fontSize: 11),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
                         const Spacer(),
                       ],

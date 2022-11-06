@@ -1,7 +1,10 @@
 part of '../controllers.dart';
 
 class SplashController {
+  UtilController utilController = UtilController();
+
   void initialPage(BuildContext context) {
+    utilController.initPage();
     Future.delayed(const Duration(seconds: 4), () {
       // Navigator.push(
       //   context,

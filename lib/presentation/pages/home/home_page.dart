@@ -1,7 +1,19 @@
 part of '../pages.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  HomeController homeController = HomeController();
+  @override
+  void initState() {
+    homeController.initPage();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,12 +22,14 @@ class HomePage extends StatelessWidget {
         return Navigator.canPop(context);
       },
       child: Scaffold(
-        appBar: _appBar(context),
+        appBar: _appBar(context,
+            infoApps: homeController.utilController.infoApps,
+            contact: homeController.utilController.contact),
         body: ListView(
           shrinkWrap: true,
           padding: const EdgeInsets.only(top: 8),
           children: [
-            _header(),
+            _header(context),
             _recommend(),
             const SizedBox(height: 40),
             _games()
@@ -25,7 +39,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Column _header() {
+  Column _header(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -42,6 +56,13 @@ class HomePage extends StatelessWidget {
           decoration:
               inputBoxDecorationRounded.copyWith(color: Colors.grey.shade300),
           child: TextField(
+            readOnly: true,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MorePage()),
+              );
+            },
             decoration: inputInputDecorationRounded.copyWith(
               border: OutlineInputBorder(
                 borderSide:
@@ -64,7 +85,8 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  AppBar _appBar(BuildContext context) {
+  AppBar _appBar(BuildContext context,
+      {required String infoApps, required String contact}) {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
@@ -81,6 +103,12 @@ class HomePage extends StatelessWidget {
             onSelected: (value) {
               switch (value) {
                 case '1':
+                  showDialog(
+                      context: context,
+                      builder: (context) => ShowDialogUtil(
+                          title: 'Info Apps',
+                          content: infoApps,
+                          activeactionButton: false));
                   break;
                 case '2':
                   break;
@@ -185,7 +213,7 @@ class HomePage extends StatelessWidget {
                       height: 50,
                       width: 50,
                       decoration: BoxDecoration(
-                          color: colorPrimary,
+                          // color: colorPrimary,
                           borderRadius: BorderRadius.circular(8),
                           image: DecorationImage(
                               image: NetworkImage(product[index].cover))),
@@ -265,7 +293,7 @@ class HomePage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) =>
-                      CardBannerProducy(product: product[index]),
+                      CardBannerProductUtil(product: product[index]),
                 ),
               )
             ],

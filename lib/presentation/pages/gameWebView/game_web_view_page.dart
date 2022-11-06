@@ -9,65 +9,59 @@ class GameWebViewPage extends StatefulWidget with WidgetsBindingObserver {
 }
 
 class _GameWebViewPageState extends State<GameWebViewPage> {
+  GameWebViewController gameWebViewController = GameWebViewController();
   @override
   void initState() {
-    // TODO: implement initState
-    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
-    WidgetsBinding.instance.addObserver(GameWebViewPage(widget.url));
+    gameWebViewController.initPage(widget.url);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> key = GlobalKey();
-    final GlobalKey globalKey = GlobalKey();
-    late InAppWebViewController webViewController;
-
     log(widget.url);
     return WillPopScope(
         onWillPop: () async {
           return false;
         },
         child: Scaffold(
-          key: key,
-          drawer: Drawer(
-            width: 100,
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            child: Container(
-              margin: const EdgeInsets.only(left: 20, top: 20, bottom: 20),
-              decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.8),
-                  borderRadius: BorderRadius.circular(18)),
-              child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Center(
-                    child: SizedBox(
-                      height: 60,
-                      child: Column(
-                        children: [
-                          // Image.asset(
-                          //   Assets.icons.keluar.path,
-                          //   scale: 2,
-                          // ),
-                          const SizedBox(height: 4),
-                          const Text(
-                            'Keluar',
-                            style: TextStyle(color: Colors.white),
-                          )
-                        ],
-                      ),
-                    ),
-                  )),
-            ),
-          ),
+          key: gameWebViewController.key,
+          // drawer: Drawer(
+          //   width: 100,
+          //   backgroundColor: Colors.transparent,
+          //   elevation: 0,
+          //   child: Container(
+          //     margin: const EdgeInsets.only(left: 20, top: 20, bottom: 20),
+          //     decoration: BoxDecoration(
+          //         color: Colors.black.withOpacity(0.8),
+          //         borderRadius: BorderRadius.circular(18)),
+          //     child: GestureDetector(
+          //         onTap: () {
+          //           Navigator.pop(context);
+          //         },
+          //         child: Center(
+          //           child: SizedBox(
+          //             height: 60,
+          //             child: Column(
+          //               children: [
+          //                 // Image.asset(
+          //                 //   Assets.icons.keluar.path,
+          //                 //   scale: 2,
+          //                 // ),
+          //                 const SizedBox(height: 4),
+          //                 const Text(
+          //                   'Keluar',
+          //                   style: TextStyle(color: Colors.white),
+          //                 )
+          //               ],
+          //             ),
+          //           ),
+          //         )),
+          //   ),
+          // ),
           body: Stack(
             children: [
               InAppWebView(
-                key: globalKey,
+                key: gameWebViewController.globalKey,
                 initialUrlRequest: URLRequest(
                   // url: Uri.parse(
                   //     'http://kids.indopustakaplus.com/game/mari%20berhitung%20-%20hewan%20darat'),
@@ -75,7 +69,7 @@ class _GameWebViewPageState extends State<GameWebViewPage> {
                 ),
                 initialOptions: options,
                 onWebViewCreated: (InAppWebViewController controller) {
-                  webViewController = controller;
+                  gameWebViewController.webViewController = controller;
                 },
               ),
               //Drawer
