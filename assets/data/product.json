@@ -5,24 +5,64 @@
             "cover": "http://ebook.windypermadi.com/Unity/projectsw/Logo/logokelompoksatu.png",
             "name": "Islam Education",
             "genre": "Education, Action",
-            "description": "Ini adalah game horror buatan yusup mansur",
-            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompokdua"
+            "description": "Mari belajar dengan asik",
+            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompoksatu"
         },
         {
             "id": "pd002",
-            "cover": "",
-            "name": "Indopustaka Kids",
-            "genre": "Kids",
-            "description": "Ini adalah game dari Andi global soft yang di peruntuhkan untuk anak anak",
-            "link_game": ""
+            "cover": "http://ebook.windypermadi.com/Unity/projectsw/Logo/logokelompokdua.png",
+            "name": "Azam Acan Belajar Mengaji",
+            "genre": "Education",
+            "description": "Ini adalah game buatan siswa PKL SMK Syubannul Wathon yang di peruntuhkan untuk anak anak",
+            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompokdua"
         },
         {
             "id": "pd003",
-            "cover": "",
-            "name": "Indopustaka Kids",
+            "cover": "http://ebook.windypermadi.com/Unity/projectsw/Logo/logokelompoklima.png",
+            "name": "Gamelan Jawa",
             "genre": "Kids",
-            "description": "Ini adalah game dari Andi global soft yang di peruntuhkan untuk anak anak",
-            "link_game": ""
+            "description": "Ini adalah game buatan siswa PKL SMK Syubannul Wathon yang di peruntuhkan untuk anak anak",
+            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompoklima"
+        },
+        {
+            "id": "pd004",
+            "cover": "http://ebook.windypermadi.com/Unity/projectsw/Logo/logokelompokenam.png",
+            "name": "Gamelan Jawa",
+            "genre": "Kids",
+            "description": "Ini adalah game buatan siswa PKL SMK Syubannul Wathon yang di peruntuhkan untuk anak anak",
+            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompokenam"
+        },
+        {
+            "id": "pd005",
+            "cover": "http://ebook.windypermadi.com/Unity/projectsw/Logo/logokelompoktuju.png",
+            "name": "Gamelan Jawa",
+            "genre": "Kids",
+            "description": "Ini adalah game buatan siswa PKL SMK Syubannul Wathon yang di peruntuhkan untuk anak anak",
+            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompoktuju"
+        },
+        {
+            "id": "pd006",
+            "cover": "http://ebook.windypermadi.com/Unity/projectsw/Logo/logokelompokdelapan.png",
+            "name": "Gamelan Jawa",
+            "genre": "Kids",
+            "description": "Ini adalah game buatan siswa PKL SMK Syubannul Wathon yang di peruntuhkan untuk anak anak",
+            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompokdelapan"
+        },
+        {
+            "id": "pd007",
+            "cover": "http://ebook.windypermadi.com/Unity/projectsw/Logo/logokelompoksepuluh.png",
+            "name": "Gamelan Jawa",
+            "genre": "Kids",
+            "description": "Ini adalah game buatan siswa PKL SMK Syubannul Wathon yang di peruntuhkan untuk anak anak",
+            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompoksepuluh"
+        },
+        {
+            "id": "pd008",
+            "cover": "http://ebook.windypermadi.com/Unity/projectsw/Logo/logokelompoksebelas.png",
+            "name": "Gamelan Jawa",
+            "genre": "Kids",
+            "description": "Ini adalah game buatan siswa PKL SMK Syubannul Wathon yang di peruntuhkan untuk anak anak",
+            "link_game": "http://ebook.windypermadi.com/Unity/projectsw/kelompoksebelas"
         }
     ]
 }
