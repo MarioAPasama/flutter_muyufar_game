@@ -1,30 +1,19 @@
 part of '../pages.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  HomeController homeController = HomeController();
-  @override
-  void initState() {
-    homeController.initPage();
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    HomeController homeController = HomeController();
     return WillPopScope(
       onWillPop: () async {
         return Navigator.canPop(context);
       },
       child: Scaffold(
         appBar: _appBar(context,
-            infoApps: homeController.utilController.infoApps,
-            contact: homeController.utilController.contact),
+            infoApps: homeController.onTapinfoApp,
+            contact: homeController.onTapContact),
         body: ListView(
           shrinkWrap: true,
           padding: const EdgeInsets.only(top: 8),
@@ -86,7 +75,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   AppBar _appBar(BuildContext context,
-      {required String infoApps, required String contact}) {
+      {required Function infoApps, required Function contact}) {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
@@ -103,14 +92,10 @@ class _HomePageState extends State<HomePage> {
             onSelected: (value) {
               switch (value) {
                 case '1':
-                  showDialog(
-                      context: context,
-                      builder: (context) => ShowDialogUtil(
-                          title: 'Info Apps',
-                          content: infoApps,
-                          activeactionButton: false));
+                  infoApps(context);
                   break;
                 case '2':
+                  contact(context);
                   break;
                 case '3':
                   if (Platform.isAndroid) {

@@ -1,13 +1,13 @@
 part of '../controllers.dart';
 
-class UtilController {
-  String appName = '';
-  String packageName = '';
-  String version = '';
-  String buildNumber = '';
-  String infoApps = '';
-  String contact = '';
+String appName = '';
+String packageName = '';
+String version = '';
+String buildNumber = '';
+String infoApps = '';
+String contact = '';
 
+class UtilController {
   void initPage() {
     infoApp();
     getUtils();
@@ -16,7 +16,7 @@ class UtilController {
   getUtils() async {
     UtilsModel result = await UtilsServiceLocal.get();
 
-    infoApps = result.infoApps + appName + packageName + version + buildNumber;
+    infoApps = '${result.infoApps}\nVersion : $version';
     contact = result.contact;
   }
 

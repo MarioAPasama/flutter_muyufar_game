@@ -1,7 +1,24 @@
 part of '../controllers.dart';
 
 class HomeController {
-  UtilController utilController = UtilController();
+  void onTapinfoApp(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) => ShowDialogUtil(
+            title: 'Info Apps', content: infoApps, activeactionButton: false));
+  }
 
-  void initPage() {}
+  void onTapContact(BuildContext context) async {
+    if (await canLaunchUrl(Uri.parse('https://wa.me/$contact'))) {
+      launchUrl(Uri.parse('https://wa.me/$contact'),
+          mode: LaunchMode.externalApplication);
+    } else {
+      showDialog(
+          context: context,
+          builder: (context) => const ShowDialogUtil(
+              title: 'Error',
+              content: 'Whatsapp Error',
+              activeactionButton: false));
+    }
+  }
 }
